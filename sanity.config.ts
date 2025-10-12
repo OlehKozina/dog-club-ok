@@ -4,10 +4,10 @@ import schemas from "./sanity/schemas";
 import { visionTool } from "@sanity/vision";
 
 export default defineConfig({
-  projectId: "fqinbqr2",
+  projectId: "iiip1pg9",
   dataset: "production",
-  title: "Bakery Website",
-  apiVersion: "2024-07-17",
+  title: "DogClub",
+  apiVersion: "2025-10-11",
   basePath: "/admin",
   plugins: [
     deskTool({

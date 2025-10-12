@@ -14,7 +14,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   description: "Website for a local bakery",
-  title: "Bakery website",
+  title: "Dog Club",
 };
 
 export default async function RootLayout({

@@ -2,9 +2,9 @@ import { createClient, groq } from "next-sanity";
 import { componentsQuery } from "./queries/componentsQuery";
 
 const client = createClient({
-  apiVersion: "2024-07-17",
+  apiVersion: "2025-10-11",
   dataset: "production",
-  projectId: "fqinbqr2",
+  projectId: "iiip1pg9",
   useCdn: false,
 });
 
@@ -15,29 +15,32 @@ export const formQuery = `{
 }
 `;
 
-export async function getPageHome() {
-  return client.fetch(`*[_type == "pageHome"]{
-    ...,
+async function fetchNoCache(query: string, params: any = {}) {
+  return client.fetch(query, params, { cache: "no-store" });
+}
+
+export function getPageHome() {
+  return fetchNoCache(
+    `*[_type == "pageHome"]{
     hero[0]{
       heading,
-      "image": image.asset->url,
       "privacyPolicy": *[_type == "privacyPolicy"][0].content,
       "form": *[_type == "form"][0]${formQuery},
     },
       ${componentsQuery}
-    }`);
+    }`
+  );
 }
 
 export function getHeader() {
-  return client.fetch(groq`*[_type == "header"][0]{
-    navigation[]{ title, sectionId },
-    "privacyPolicy": *[_type == "privacyPolicy"][0].content,
-    "form": *[_type == "form"][0]${formQuery},
+  return fetchNoCache(`*[_type == "header"][0]{
+    navigation[]{ title, sectionId }
   }`);
 }
 
 export function getFooter() {
-  return client.fetch(groq`*[_type == "footer"][0]{
+  return fetchNoCache(
+    groq`*[_type == "footer"][0]{
     navigation[]{ title, sectionId },
     phone,
     email,
@@ -48,5 +51,6 @@ export function getFooter() {
     "right": rightImage.asset->url
     },
     "privacyPolicy": privacyPolicy->content,
-  }`);
+  }`
+  );
 }
