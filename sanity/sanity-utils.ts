@@ -24,6 +24,7 @@ export function getPageHome() {
     `*[_type == "pageHome"]{
     hero[0]{
       heading,
+      "videoUrl": video.asset->url,
       "privacyPolicy": *[_type == "privacyPolicy"][0].content,
       "form": *[_type == "form"][0]${formQuery},
     },

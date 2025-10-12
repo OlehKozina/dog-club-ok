@@ -1,33 +1,26 @@
+"use client";
 import Marquee from "react-fast-marquee";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBreadSlice,
-  faWheatAwn,
-  faCookieBite,
-  faSeedling,
-} from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
-const bakeryIcons = [faBreadSlice, faWheatAwn, faCookieBite, faSeedling];
-
-function MarqueeWithText({ advantages }: { advantages?: string[] }) {
-  if (!advantages) return null;
+function MarqueeWithText({ logos }: { logos?: { logo?: string }[] }) {
+  if (!logos) return null;
 
   return (
-    <section className="py-4 bg-brand-default">
+    <section className="py-4">
       <Marquee
         gradient={false}
         speed={50}
         className="rounded-3xl md:rounded-none"
       >
-        {!!advantages?.length &&
-          advantages.map((advantage, i) => (
+        {!!logos?.length &&
+          logos.map((item, i) => (
             <div key={i} className="flex items-center mr-8">
-              <span className="text-sm md:text-lg md:font-light md:text-brand-light font-bold">
-                {advantage}
-              </span>
-              <FontAwesomeIcon
-                icon={bakeryIcons[i % bakeryIcons.length]}
-                className="ml-8 text-brand-light text-lg md:text-xl"
+              <Image
+                className="w-40 h-20"
+                src={item?.logo || ""}
+                width={40}
+                height={20}
+                alt="logo"
               />
             </div>
           ))}

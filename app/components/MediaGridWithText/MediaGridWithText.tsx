@@ -8,16 +8,15 @@ import { useInView } from "react-intersection-observer";
 export interface MediaGridWithTextProps {
   _id: string;
   heading?: string;
-  videoUrl?: string;
-  image?: string;
+  videoTop?: string;
+  videoBottom?: string;
   text?: string;
 }
 
 const MediaGridWithText = ({
   heading,
-  _id,
-  videoUrl,
-  image,
+  videoTop,
+  videoBottom,
   text,
 }: MediaGridWithTextProps) => {
   const [ref, inView] = useInView({ threshold: 0.5, triggerOnce: true });
@@ -37,10 +36,10 @@ const MediaGridWithText = ({
         ref={ref}
         className="grid w-full max-w-full grid-cols-12 grid-rows-[4rem_4rem_4rem_3rem_0rem_auto] md:grid-rows-[8rem_8rem_8rem_6rem_4rem_auto] gap-x-6 relative"
       >
-        {videoUrl && (
+        {videoTop && (
           <div className="col-start-1 col-end-8 row-start-1 row-end-4 z-content rounded-3xl overflow-hidden shadow-lg">
             <motion.video
-              src={videoUrl}
+              src={videoTop}
               initial="initial"
               transition={{ duration: 0.5, ease: "easeOut" }}
               animate={inView ? "animate" : "initial"}
@@ -57,14 +56,23 @@ const MediaGridWithText = ({
             />
           </div>
         )}
-        {image && (
+        {videoBottom && (
           <div className="col-start-6 col-end-13 row-start-3 row-end-7 z-base overflow-hidden shadow-lg">
-            <Image
-              src={image}
-              alt="products"
-              width={626}
-              height={414}
-              className="object-cover rounded-3xl"
+            <motion.video
+              src={videoBottom}
+              initial="initial"
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              animate={inView ? "animate" : "initial"}
+              variants={{
+                initial: { opacity: 0.5 },
+                animate: { opacity: 1 },
+              }}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="w-full h-full object-cover"
             />
           </div>
         )}

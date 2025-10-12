@@ -29,11 +29,21 @@ const sliderQuery = `
       slides[]${cardQuery}
     }
 `;
+
+const marqueeQuery = `
+    _type == "marquee" =>{
+      logos[]{
+        "logo": asset->url,
+      } 
+    }
+`;
+
 const mediaGridWithTextQuery = `
     _type == "mediaGridWithText" =>{
       "_id": navLink->_id,
       heading,
-      "videoUrl": video.asset->url,
+      "videoTop": videoTop.asset->url,
+      "videoBottom": videoBottom.asset->url,
       "image": image.asset->url,
       text
     }
@@ -58,6 +68,7 @@ const queries = [
   sliderQuery,
   mediaGridWithTextQuery,
   contactQuery,
+  marqueeQuery,
 ].join(",");
 
 export const componentsQuery = `

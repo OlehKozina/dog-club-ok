@@ -39,7 +39,7 @@ function MediaWithText({
           <div className="max-w-[35rem] lg:max-w-[43rem]">
             <Heading
               heading={heading}
-              className="mb-6 mx-auto text-center md:mb-10"
+              className="mb-6 mx-auto text-center md:mb-10 whitespace-pre-line"
             />
             {content && (
               <div className="mb-5">

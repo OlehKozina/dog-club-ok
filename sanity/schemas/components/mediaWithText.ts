@@ -7,7 +7,7 @@ export const mediaWithText = defineType(
     name: "mediaWithText",
     icon: FaBook,
     fields: [
-      F.string({
+      F.text({
         name: "heading",
       }),
       F.image({
@@ -21,11 +21,6 @@ export const mediaWithText = defineType(
       F.array({
         name: "content",
         of: [{ type: "block" }],
-      }),
-      F.reference({
-        name: "navLink",
-        to: [{ type: "navigation" }],
-        title: "Navigation Link",
       }),
     ],
 

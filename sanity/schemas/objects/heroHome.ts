@@ -11,9 +11,13 @@ export const heroHome = defineType(
       F.string({
         name: "heading",
       }),
-      F.image({
-        name: "image",
-        hotspot: true,
+      F.file({
+        name: "video",
+        accept: "video/*",
+      }),
+      F.array({
+        name: "content",
+        of: [{ type: "block" }],
       }),
     ],
 

@@ -9,11 +9,10 @@ const Hero = ({ hero }: { hero: HeroType }) => {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const toggleForm = () => setIsFormVisible((prev) => !prev);
   if (!hero) return null;
-  const { heading, image, privacyPolicy, form } = hero;
+  const { heading, videoUrl, privacyPolicy, form } = hero;
   const { firstWord, fullText } = getHeadingParts(heading);
   const { scrollY } = useScroll();
   const yBg = useTransform(scrollY, [0, 500], [0, 150]);
-
   return (
     <section
       className="relative flex items-center overflow-hidden h-screen"
@@ -21,11 +20,20 @@ const Hero = ({ hero }: { hero: HeroType }) => {
     >
       <motion.div
         style={{
-          backgroundImage: `url(${image})`,
           y: yBg,
         }}
         className="absolute inset-0 bg-cover bg-top"
-      />
+      >
+        {" "}
+        <video
+          src={videoUrl}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        />
+      </motion.div>
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/0" />
       <div className="container flex flex-col gap-5">
         {heading && (
