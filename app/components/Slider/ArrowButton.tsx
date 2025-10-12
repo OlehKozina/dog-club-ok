@@ -14,10 +14,10 @@ const ArrowButton = ({
     <button
       onClick={onClick}
       className={clsx(
-        "shadow-xl absolute bg-brand-brick hover:opacity-100 opacity-90 rounded-full h-8 w-8 top-1/2 transform -translate-y-1/2 p-2 z-5 transition-all text-black",
+        "shadow-xl absolute bg-brand-brick hover:opacity-100 opacity-90 rounded-full h-8 w-8 top-0 transform -translate-y-1/2 p-2 z-5 transition-all text-black",
         direction === "left"
           ? "left-0 hover:-translate-x-2"
-          : "right-0 hover:translate-x-4"
+          : "left-10 hover:translate-x-4"
       )}
     >
       <FontAwesomeIcon

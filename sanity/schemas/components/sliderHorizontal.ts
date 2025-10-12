@@ -1,10 +1,10 @@
 import { defineType, defineField } from "sanity";
-import { FaPhotoVideo as icon } from "react-icons/fa";
+import { FaSlideshare as icon } from "react-icons/fa";
 import { F } from "../tool";
 
-export const slider = defineType(
+export const sliderHorizontal = defineType(
   F.object({
-    name: "slider",
+    name: "sliderHorizontal",
     icon,
     fields: [
       F.string({
@@ -56,7 +56,7 @@ export const slider = defineType(
         image?: any;
       }) {
         return {
-          title: heading || "Slider",
+          title: heading || "Horizontal Slider",
           subtitle: firstSlide
             ? `Includes ${firstSlide} and more`
             : "No slides added yet",

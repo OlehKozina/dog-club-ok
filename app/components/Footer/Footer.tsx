@@ -9,7 +9,7 @@ function Footer({ footer }: { footer?: NavigationType }) {
   if (!footer) return null;
   const { footerImages, ...footerContainer } = footer;
   return (
-    <footer className="relative text-center py-8 bg-cover bg-center bg-no-repeat md:text-left md:hover:bg-brand-dark md:hover:bg-opacity-40 transition-all">
+    <footer className="relative text-center py-8 bg-cover bg-center bg-no-repeat md:text-left bg-brand-dark transition-all">
       <Icons icons={[{ name: "breadCut", position: "center" }]} />
       <FooterContainer footerContainer={footerContainer} />
       <FooterImages footerImages={footerImages} />

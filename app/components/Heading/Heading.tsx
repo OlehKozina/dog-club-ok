@@ -19,8 +19,11 @@ const Heading = ({
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   if (!heading) return null;
-  const { lastWord, fullText } = getHeadingParts(heading);
-  const lastWordStartIndex = fullText.length - lastWord.length;
+  const words = heading.split(" ");
+  const lastTwoWords = words.slice(-2).join(" ");
+  const fullText = heading.split(""); // keep character array for animation
+  const lastTwoChars = lastTwoWords.length;
+  const lastTwoStartIndex = fullText.length - lastTwoChars;
 
   return (
     <motion.h2
@@ -34,12 +37,12 @@ const Heading = ({
       )}
     >
       {fullText.map((char, index) => {
-        const isLastWordChar = index >= lastWordStartIndex;
+        const isLastTwoWordsChar = index >= lastTwoStartIndex;
         return (
           <motion.span
             key={index}
             variants={charVariants}
-            className={isLastWordChar ? "text-brand-default" : ""}
+            className={isLastTwoWordsChar ? "text-brand-default" : ""}
           >
             {char}
           </motion.span>
