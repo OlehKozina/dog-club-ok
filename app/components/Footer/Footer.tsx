@@ -10,9 +10,9 @@ function Footer({ footer }: { footer?: NavigationType }) {
   const { footerImages, ...footerContainer } = footer;
   return (
     <footer
-      className="relative text-center py-8 bg-cover bg-center bg-no-repeat md:text-left transition-all"
+      className="relative text-center py-2 bg-cover bg-center bg-no-repeat md:text-left transition-all"
       style={{
-        background: "linear-gradient(to top, #31261a, #4b3928)", // adjust second color as needed
+        background: "linear-gradient(to top, #31261a, #4b3928)",
       }}
     >
       <Icons icons={[{ name: "breadCut", position: "center" }]} />

@@ -6,7 +6,7 @@ function MarqueeWithText({ logos }: { logos?: { logo?: string }[] }) {
   if (!logos) return null;
 
   return (
-    <section className="py-4">
+    <section className="my-10 md:my-20">
       <Marquee
         gradient={false}
         speed={50}

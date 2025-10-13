@@ -23,7 +23,7 @@ function MediaWithText({
 }: MediaWithTextProps) {
   return (
     <section
-      className="py-10 md:py-20 text-sm md:text-base relative overflow-hidden scroll-mt-10 max-md:scroll-mt-16"
+      className="my-10 md:my-20 text-sm md:text-base relative overflow-hidden scroll-mt-10 max-md:scroll-mt-16"
       id="traditions"
     >
       <Icons
@@ -36,7 +36,7 @@ function MediaWithText({
       />
       <div className="container relative bg-brand-dark rounded-3xl bg-opacity-80 py-10">
         <div className="flex flex-col md:flex-row items-start max-md:items-center justify-center gap-10 md:gap-0 md:space-x-10 text-base md:text-xl">
-          <div className="max-w-[35rem] lg:max-w-[43rem]">
+          <div className="max-w-[35rem] lg:max-w-[40rem]">
             <Heading
               heading={heading}
               className="mb-6 mx-auto text-center md:mb-10 whitespace-pre-line"

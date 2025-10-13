@@ -21,7 +21,7 @@ const Heading = ({
   const fullText = heading.split(""); // keep character array for animation
   const lastTwoChars = lastTwoWords.length;
   const lastTwoStartIndex = fullText.length - lastTwoChars;
-
+  const lastTwoWordIndices = words.length - 2;
   return (
     <motion.h2
       ref={ref}
@@ -34,7 +34,6 @@ const Heading = ({
       )}
     >
       {words.map((word, wordIndex) => {
-        // Detect numbers inside the word
         const numberMatch = word.match(/\d+/);
 
         if (numberMatch) {
@@ -53,24 +52,31 @@ const Heading = ({
                 enableScrollSpy
                 scrollSpyOnce
               />
-              {/* Keep suffix if number had one (like "1,200+" or "100%") */}
               {word.replace(numberMatch[0], "")}
             </motion.span>
           );
         }
-
-        // Default: animate word by characters
+        const isLastTwoWords = wordIndex >= lastTwoWordIndices;
         return (
-          <span key={wordIndex} className="inline-block mx-1">
-            {word.split("").map((char, charIndex) => (
-              <motion.span
-                key={`${wordIndex}-${charIndex}`}
-                variants={charVariants}
-                className=""
-              >
-                {char}
-              </motion.span>
-            ))}
+          <span
+            key={wordIndex}
+            className={clsx(
+              "inline-block mx-1",
+              isLastTwoWords && "text-brand-default"
+            )}
+          >
+            {word.split("").map((char, charIndex) => {
+              const isLastTwoWordsChar = charIndex >= lastTwoStartIndex;
+              return (
+                <motion.span
+                  key={`${wordIndex}-${charIndex}`}
+                  variants={charVariants}
+                  className={isLastTwoWordsChar ? "text-brand-default" : ""}
+                >
+                  {char}
+                </motion.span>
+              );
+            })}
           </span>
         );
       })}

@@ -52,6 +52,11 @@ export default function Background({
         alt="grass background"
         className="fixed top-0 left-0 z-under"
       />
+      <img
+        src="/dog-cropped.png"
+        alt="brown-dog"
+        className="fixed right-0 top-1/4 z-under max-w-[10rem]"
+      />
       {prints.map((print) => (
         <motion.div
           key={print.id}
