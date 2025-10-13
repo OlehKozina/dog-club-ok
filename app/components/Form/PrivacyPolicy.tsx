@@ -39,12 +39,12 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
           className={clsx(
-            "fixed inset-0 z-overlay p-5 text-brand-light py-20 flex items-center justify-center bg-brand-dark bg-opacity-50",
+            "fixed inset-0 z-overlay p-5 py-20 flex items-center justify-center bg-brand-dark bg-opacity-50",
             className
           )}
         >
           <div className="relative z-10 items-left w-full bg-brand-dark rounded-[2rem] transition-opacity duration-slow max-w-[28rem] md:max-w-[38rem] px-8">
-            <div className="no-scroll-bar h-full max-h-[60vh] md:max-h-[70vh] py-10">
+            <div className="text-black no-scroll-bar h-full max-h-[60vh] md:max-h-[70vh] py-10">
               <PortableText
                 value={privacyPolicy || []}
                 components={components}
@@ -56,7 +56,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({
             >
               <FontAwesomeIcon
                 icon={faXmark}
-                className="hover:text-brand-default text-xl transition-colors"
+                className="hover:text-brand-default text-black text-xl transition-colors"
                 onClick={onClose}
               />
             </button>

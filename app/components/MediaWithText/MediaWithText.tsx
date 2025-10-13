@@ -24,7 +24,7 @@ function MediaWithText({
   return (
     <section
       className="my-10 md:my-20 text-sm md:text-base relative overflow-hidden scroll-mt-10 max-md:scroll-mt-16"
-      id="traditions"
+      id="trust"
     >
       <Icons
         icons={[

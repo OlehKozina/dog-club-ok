@@ -58,7 +58,6 @@ const Slider = ({
 }: SliderProps) => {
   if (!slidesOrg?.length && !children) return null;
   const slides = slidesOrg;
-  console.log("slides", slides);
   const { api, height, indices, ref } = useCarousel({
     align: "start",
     autoHeight: true,

@@ -55,7 +55,7 @@ export default function Slider({ heading, slides, _id }: SliderProps) {
   return (
     <section
       className="py-5 md:py-12 relative overflow-hidden max-md:scroll-mt-16 scroll-mt-10"
-      id="formats"
+      id="customers"
     >
       <Icons
         icons={[

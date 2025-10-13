@@ -23,7 +23,7 @@ const MediaGridWithText = ({
   return (
     <section
       className="container relative py-10 bg-brand-dark bg-opacity-80 rounded-3xl"
-      id="baking"
+      id="services"
     >
       <div className="relative p-7 sm:p-14 max-md:scroll-mt-16 scroll-mt-24">
         {heading && (

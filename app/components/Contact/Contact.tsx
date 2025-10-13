@@ -23,7 +23,7 @@ function Contact({
   return (
     <section
       className="py-5 md:py-12 relative overflow-hidden max-md:scroll-mt-16"
-      id="contacts"
+      id="contact"
     >
       <Icons />
       <div className="container">

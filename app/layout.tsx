@@ -23,7 +23,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const [header, footer] = await Promise.all([getHeader(), getFooter()]);
-  console.log("header", header);
+
   return (
     <html lang="en">
       <body className={rowdies.className}>
