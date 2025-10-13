@@ -10,7 +10,7 @@ function MarqueeWithText({ logos }: { logos?: { logo?: string }[] }) {
       <Marquee
         gradient={false}
         speed={50}
-        className="rounded-3xl md:rounded-none"
+        className="rounded-3xl md:rounded-none bg-brand-dark bg-opacity-80"
       >
         {!!logos?.length &&
           logos.map((item, i) => (

@@ -34,7 +34,7 @@ const Hero = ({ hero }: { hero: HeroType }) => {
           className="w-full h-full object-cover"
         />
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/0" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/0" />
       <div className="container flex flex-col gap-5">
         {heading && (
           <motion.h1

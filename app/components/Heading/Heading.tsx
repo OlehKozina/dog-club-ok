@@ -1,13 +1,10 @@
 "use client";
 import React from "react";
-import {
-  getHeadingParts,
-  containerVariants,
-  charVariants,
-} from "../Hero/utils";
+import { containerVariants, charVariants } from "../Hero/utils";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import CountUp from "react-countup";
 
 const Heading = ({
   heading,
@@ -36,16 +33,45 @@ const Heading = ({
         className
       )}
     >
-      {fullText.map((char, index) => {
-        const isLastTwoWordsChar = index >= lastTwoStartIndex;
+      {words.map((word, wordIndex) => {
+        // Detect numbers inside the word
+        const numberMatch = word.match(/\d+/);
+
+        if (numberMatch) {
+          const number = parseInt(numberMatch[0], 10);
+
+          return (
+            <motion.span
+              key={wordIndex}
+              variants={charVariants}
+              className="text-brand-default inline-block mx-1"
+            >
+              <CountUp
+                start={1}
+                end={number}
+                duration={2}
+                enableScrollSpy
+                scrollSpyOnce
+              />
+              {/* Keep suffix if number had one (like "1,200+" or "100%") */}
+              {word.replace(numberMatch[0], "")}
+            </motion.span>
+          );
+        }
+
+        // Default: animate word by characters
         return (
-          <motion.span
-            key={index}
-            variants={charVariants}
-            className={isLastTwoWordsChar ? "text-brand-default" : ""}
-          >
-            {char}
-          </motion.span>
+          <span key={wordIndex} className="inline-block mx-1">
+            {word.split("").map((char, charIndex) => (
+              <motion.span
+                key={`${wordIndex}-${charIndex}`}
+                variants={charVariants}
+                className=""
+              >
+                {char}
+              </motion.span>
+            ))}
+          </span>
         );
       })}
     </motion.h2>

@@ -1,6 +1,6 @@
 import Icons from "./Icons";
-import Flour from "./Flour";
+import PawPrint from "./PawPrint";
 import LineSvg from "./Line";
 
-export { Flour, LineSvg };
+export { PawPrint, LineSvg };
 export default Icons;

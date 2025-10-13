@@ -35,7 +35,7 @@ const FooterNavigation = ({
                   href={link.href}
                   target={link.external ? "_blank" : undefined}
                   rel={link.external ? "noopener noreferrer" : undefined}
-                  className="font-thin text-brand-light hover:text-brand-default transition-colors flex flex-col md:flex-row"
+                  className="font-thin hover:text-brand-default transition-colors flex flex-col md:flex-row"
                 >
                   {link.label}
                 </a>
@@ -49,7 +49,7 @@ const FooterNavigation = ({
                 key={link.label}
                 href={link.href}
                 aria-label={link.label}
-                className="text-brand-light hover:text-brand-default transition-colors flex items-center"
+                className="hover:text-brand-default transition-colors flex items-center"
               >
                 {link.icon && (
                   <FontAwesomeIcon icon={link.icon} className="text-2xl" />

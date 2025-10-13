@@ -5,7 +5,7 @@ const fontWeight = {
   thin: "400",
 };
 const fontFamily = {
-  poppins: ["Poppins", "sans-serif"],
+  rowdies: ["Rowdies", "sans-serif"],
 };
 
 export const type = {

@@ -22,8 +22,6 @@ interface SliderSectionProps {
 }
 
 const SliderSection = ({ heading, slides: _slides }: SliderSectionProps) => {
-  console.log("heading", heading);
-  console.log("slides", _slides);
   if (!_slides) return;
   const sectionRef = useRef<HTMLDivElement>(null);
   const [sectionHeight, setSectionHeight] = useState<number>(0);

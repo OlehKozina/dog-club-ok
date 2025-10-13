@@ -65,7 +65,7 @@ export default function Slider({ heading, slides, _id }: SliderProps) {
           { name: "baguette", position: "bottom-right" },
         ]}
       />
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 bg-brand-dark bg-opacity-80 rounded-3xl">
         <Heading heading={heading} className="mb-6 text-center md:mb-10" />
         <div className="relative max-w-[21rem] sm:max-w-[42rem] md:max-w-[69rem] mx-auto">
           <div

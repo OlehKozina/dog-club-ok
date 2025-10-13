@@ -34,7 +34,7 @@ function MediaWithText({
           { name: "baguette", position: "bottom-right" },
         ]}
       />
-      <div className="container relative">
+      <div className="container relative bg-brand-dark rounded-3xl bg-opacity-80 py-10">
         <div className="flex flex-col md:flex-row items-start max-md:items-center justify-center gap-10 md:gap-0 md:space-x-10 text-base md:text-xl">
           <div className="max-w-[35rem] lg:max-w-[43rem]">
             <Heading
@@ -48,7 +48,12 @@ function MediaWithText({
             )}
           </div>
           <div className="max-w-[25rem] w-full hidden md:block">
-            <Illustration image={image} className="rounded-t-full" />
+            <Illustration
+              image={image}
+              className="rounded-3xl"
+              width={450}
+              height={300}
+            />
           </div>
           <div className="max-w-[35rem] w-full block md:hidden">
             <Illustration

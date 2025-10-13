@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Rowdies } from "next/font/google";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Background from "./components/Background";
@@ -7,9 +7,9 @@ import { getHeader, getFooter } from "@/sanity/sanity-utils";
 
 import "./globals.css";
 
-const poppins = Poppins({
+const rowdies = Rowdies({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "900"],
+  weight: ["300", "400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export default async function RootLayout({
   console.log("header", header);
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={rowdies.className}>
         <Header header={header} />
         <Background> {children}</Background>
         <Footer footer={footer} />

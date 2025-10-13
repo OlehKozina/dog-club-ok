@@ -15,7 +15,7 @@ const FooterPrivacy = ({
     <ul className="footer__bottom z-content">
       <li className="flex justify-center lg:block">
         <button
-          className="text-sm font-light text-brand-light hover:text-brand-default transition-colors flex flex-col md:flex-row items-start"
+          className="text-sm font-light hover:text-brand-default transition-colors flex flex-col md:flex-row items-start"
           type="button"
           onClick={togglePolicy}
         >

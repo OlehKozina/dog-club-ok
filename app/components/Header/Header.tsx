@@ -64,9 +64,12 @@ const Header = ({ header }: { header: NavigationType }) => {
     >
       <div
         className={clsx(
-          "container bg-brand-dark/60 hover:bg-brand-dark/90 transition-all rounded-3xl p-4",
+          "container transition-all rounded-3xl p-4",
           isMobMenuVisible && "rounded-br-none"
         )}
+        style={{
+          background: "linear-gradient(to right, #A1C4FD, #C2E9FB)",
+        }}
       >
         <div className="flex items-center gap-10 relative">
           <HeaderNav navigation={navigation} activeSection={activeSection} />

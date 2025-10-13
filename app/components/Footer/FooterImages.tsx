@@ -20,7 +20,7 @@ const FooterImages = ({
         alt="bread-left"
         width={80}
         height={24}
-        className="absolute top-0 right-0 w-[8rem] bg-no-repeat md:w-[10rem]"
+        className="absolute bottom-[7.5rem] right-0 w-[8rem] bg-no-repeat md:w-[10rem]"
       />
     </>
   );

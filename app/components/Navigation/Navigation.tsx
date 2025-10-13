@@ -73,7 +73,7 @@ const Navigation = ({
             <a
               ref={linkRef}
               className={clsx(
-                "text-brand-light no-underline",
+                "no-underline",
                 !isHeader && "hover:text-brand-default transition-all",
                 classNames?.link
               )}

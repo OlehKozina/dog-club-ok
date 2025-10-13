@@ -22,7 +22,7 @@ const MediaGridWithText = ({
   const [ref, inView] = useInView({ threshold: 0.5, triggerOnce: true });
   return (
     <section
-      className="container relative p-7 sm:p-14 max-md:scroll-mt-16 scroll-mt-24"
+      className="container relative p-7 sm:p-14 max-md:scroll-mt-16 scroll-mt-24 bg-brand-dark bg-opacity-80 rounded-3xl"
       id="baking"
     >
       {heading && (
