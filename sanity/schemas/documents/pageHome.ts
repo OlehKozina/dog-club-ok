@@ -26,7 +26,7 @@ export const pageHome = {
           { type: "slider" },
           { type: "mediaGridWithText" },
           { type: "contact" },
-          { type: "sliderHorizontal" },
+          { type: "sliderVertical" },
         ],
       }),
     ]),

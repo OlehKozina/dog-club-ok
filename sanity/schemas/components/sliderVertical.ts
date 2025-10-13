@@ -2,9 +2,9 @@ import { defineType, defineField } from "sanity";
 import { FaSlideshare as icon } from "react-icons/fa";
 import { F } from "../tool";
 
-export const sliderHorizontal = defineType(
+export const sliderVertical = defineType(
   F.object({
-    name: "sliderHorizontal",
+    name: "sliderVertical",
     icon,
     fields: [
       F.string({

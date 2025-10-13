@@ -29,6 +29,13 @@ const sliderQuery = `
       slides[]${cardQuery}
     }
 `;
+const sliderVerticalQuery = `
+    _type == "sliderVertical" =>{
+      "_id": navLink->_id,
+      heading,
+      slides[]${cardQuery}
+    }
+`;
 
 const marqueeQuery = `
     _type == "marquee" =>{
@@ -66,6 +73,7 @@ const queries = [
   cardsQuery,
   mediaWithTextQuery,
   sliderQuery,
+  sliderVerticalQuery,
   mediaGridWithTextQuery,
   contactQuery,
   marqueeQuery,
