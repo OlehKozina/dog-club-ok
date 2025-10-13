@@ -22,6 +22,15 @@ const mediaWithTextQuery = `
       "horizontalImage": image.asset->url,
     }
 `;
+const galleryQuery = `
+  _type == "gallery" =>{
+    heading,
+    images[]{
+      _key,
+      "url": asset->url
+    }
+  }
+`;
 const sliderQuery = `
     _type == "slider" =>{
       "_id": navLink->_id,
@@ -77,6 +86,7 @@ const queries = [
   mediaGridWithTextQuery,
   contactQuery,
   marqueeQuery,
+  galleryQuery,
 ].join(",");
 
 export const componentsQuery = `

@@ -9,6 +9,7 @@ const componentMap: Record<string, React.ComponentType<any>> = {
   mediaGridWithText: dynamic(() => import("../MediaGridWithText")),
   contact: dynamic(() => import("../Contact")),
   // sliderVertical: dynamic(() => import("../VerticalSlider")),
+  gallery: dynamic(() => import("../Gallery")),
 };
 
 export default function ComponentsList({
