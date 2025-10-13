@@ -1,9 +1,10 @@
 import { FaWpforms as icon } from "react-icons/fa";
 import { F } from "../tool";
 
-export const form = F.object({
+export const form = {
   name: "form",
   title: "Form",
+  type: "document",
   icon,
   fields: [
     F.string({ name: "name", title: "Form Name" }),
@@ -31,4 +32,4 @@ export const form = F.object({
       media,
     }),
   },
-});
+};
