@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Form from "../Form";
-import Icons from "../Icons";
 import { FormType } from "@/types";
 import { PortableTextBlock } from "next-sanity";
 
@@ -25,7 +24,6 @@ function Contact({
       className="py-5 md:py-12 relative overflow-hidden max-md:scroll-mt-16"
       id="contact"
     >
-      <Icons />
       <div className="container">
         <div className="flex flex-col items-center gap-6 pb-0 md:flex-row md:gap-10 md:pb-24">
           <Form

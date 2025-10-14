@@ -2,7 +2,6 @@ import React from "react";
 import { CardsType } from "@/types";
 import Card from "./Card";
 import Heading from "../Heading";
-import Icons from "../Icons";
 
 export default function Cards({
   heading,
@@ -20,13 +19,6 @@ export default function Cards({
       className="py-5 md:py-12 relative overflow-hidden max-md:scroll-mt-16 scroll-mt-12"
       id="bakers"
     >
-      <Icons
-        icons={[
-          { name: "donut", position: "top-right" },
-          { name: "muffin", position: "bottom-left" },
-          { name: "loaf", position: "bottom-right" },
-        ]}
-      />
       <div className="container">
         {heading && (
           <Heading

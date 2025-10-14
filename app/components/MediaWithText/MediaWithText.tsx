@@ -1,9 +1,7 @@
 "use client";
 import { PortableText, PortableTextBlock } from "@portabletext/react";
 import React from "react";
-import { ItemType } from "@/types";
 import Heading from "../Heading";
-import Icons from "../Icons";
 import Illustration from "./Illustration";
 
 interface MediaWithTextProps {
@@ -23,17 +21,9 @@ function MediaWithText({
 }: MediaWithTextProps) {
   return (
     <section
-      className="my-10 md:my-20 text-sm md:text-base relative overflow-hidden scroll-mt-10 max-md:scroll-mt-16"
+      className="my-10 md:my-20 text-sm md:text-base relative overflow-hidden scroll-mt-10 max-md:scroll-mt-16 px-6"
       id="trust"
     >
-      <Icons
-        icons={[
-          { name: "bread2", position: "top-left" },
-          { name: "basket", position: "top-right" },
-          { name: "loaf", position: "bottom-left" },
-          { name: "baguette", position: "bottom-right" },
-        ]}
-      />
       <div className="container relative bg-brand-dark rounded-3xl bg-opacity-80 py-10">
         <div className="flex flex-col md:flex-row items-start max-md:items-center justify-center gap-10 md:gap-0 md:space-x-10 text-base md:text-xl">
           <div className="max-w-[35rem] lg:max-w-[40rem]">

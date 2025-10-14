@@ -18,7 +18,7 @@ const Heading = ({
   if (!heading) return null;
   const words = heading.split(" ");
   const lastTwoWords = words.slice(-2).join(" ");
-  const fullText = heading.split(""); // keep character array for animation
+  const fullText = heading.split("");
   const lastTwoChars = lastTwoWords.length;
   const lastTwoStartIndex = fullText.length - lastTwoChars;
   const lastTwoWordIndices = words.length - 2;

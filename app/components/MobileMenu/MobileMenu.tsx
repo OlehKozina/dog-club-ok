@@ -38,7 +38,7 @@ const MobileMenu: React.FC<MenuProps> = ({
             navigation={navigation}
             onClose={onClose}
             classNames={{
-              root: "flex rounded-b-3xl text-center transition-all hover:!bg-brand-dark/80 mx-auto bg-brand-dark/50 flex-col gap-5 mt-8 p-6 max-w-[38rem]",
+              root: "flex rounded-b-3xl text-center transition-all hover:!bg-brand-dark/80 mx-auto bg-brand-dark/50 flex-col gap-5 mt-2 mr-2 p-6 max-w-[38rem]",
               link: "no-underline !text-brand-light transition-colors hover:!text-brand-default",
             }}
           />

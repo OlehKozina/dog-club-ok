@@ -21,14 +21,11 @@ const MediaGridWithText = ({
 }: MediaGridWithTextProps) => {
   const [ref, inView] = useInView({ threshold: 0.5, triggerOnce: true });
   return (
-    <section
-      className="container relative py-10 bg-brand-dark bg-opacity-80 rounded-3xl"
-      id="services"
-    >
-      <div className="relative p-7 sm:p-14 max-md:scroll-mt-16 scroll-mt-24">
+    <section className="px-2 sm:container relative py-10 mx-auto" id="services">
+      <div className="relative p-7 sm:p-14 bg-opacity-80 rounded-3xl bg-brand-dark max-md:scroll-mt-16 scroll-mt-24">
         {heading && (
           <Heading
-            className="text-3xl font-bold text-left max-w-[40rem] !whitespace-pre-line absolute max-sm:-top-2 top-5 md:top-0 left-10 sm:left-20 z-above-content"
+            className="text-3xl font-bold text-left max-w-[20rem] md:max-w-[40rem] absolute max-sm:-top-2 top-5 md:top-0 left-10 sm:left-20 z-above-content"
             heading={heading}
           />
         )}
@@ -58,7 +55,7 @@ const MediaGridWithText = ({
             </div>
           )}
           {videoBottom && (
-            <div className="col-start-6 col-end-13 row-start-3 row-end-7 z-base overflow-hidden shadow-lg">
+            <div className="col-start-6 col-end-13 row-start-3 row-end-7 z-base overflow-hidden shadow-lg rounded-3xl">
               <motion.video
                 src={videoBottom}
                 initial="initial"

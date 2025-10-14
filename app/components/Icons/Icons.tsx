@@ -1,13 +1,10 @@
 import Image from "next/image";
 
 const iconPaths = {
-  breadCut: "/icons/bread1.svg",
-  bread2: "/icons/bread2.svg",
-  basket: "/icons/breadBasket.svg",
-  loaf: "/icons/breadLoaf.svg",
-  baguette: "/icons/baguette.svg",
-  donut: "/icons/donut.svg",
-  muffin: "/icons/muffin.svg",
+  dogOne: "/icons/dog_icon_one.svg",
+  dogTwo: "/icons/dog_icon_two.svg",
+  dogBottom: "/icons/dog_icon_bottom.svg",
+  dogIcon: "/icons/dog_icon.svg",
 };
 
 type IconPosition =
@@ -19,26 +16,28 @@ type IconPosition =
 
 interface IconsProps {
   icons?: { name: keyof typeof iconPaths; position: IconPosition }[];
+  className?: string;
 }
 
 export default function Icons({
   icons = [
-    { name: "breadCut", position: "top-left" },
-    { name: "donut", position: "top-right" },
-    { name: "muffin", position: "bottom-left" },
-    { name: "loaf", position: "bottom-right" },
+    { name: "dogOne", position: "top-left" },
+    { name: "dogTwo", position: "top-right" },
+    { name: "dogIcon", position: "bottom-left" },
+    { name: "dogBottom", position: "bottom-right" },
   ],
+  className,
 }: IconsProps) {
   const positionClasses: Record<IconPosition, string> = {
-    "top-left": "top-0 sm:top-1/2 left-0 sm:left-1/3",
-    "top-right": "top-10 right-0 sm:right-1/3",
-    center: "top-1/2 left-1/3",
-    "bottom-left": "bottom-10 left-0 sm:left-10",
-    "bottom-right": "bottom-10 right-0 sm:right-[15rem]",
+    "top-left": "top-0 sm:top-1/2 left-0",
+    "top-right": "top-10 right-0",
+    center: "top-1/2 left-1/2",
+    "bottom-left": "bottom-10 left-0",
+    "bottom-right": "bottom-10 right-0",
   };
 
   return (
-    <div className="absolute z-under inset-0 overflow-hidden pointer-events-none invert">
+    <div className="absolute z-under inset-0 overflow-hidden pointer-events-none">
       {icons.map(({ name, position }, i) => (
         <Image
           key={i}
@@ -46,7 +45,7 @@ export default function Icons({
           alt={name}
           width={80}
           height={80}
-          className={`absolute opacity-20 w-24 ${positionClasses[position]}`}
+          className={`absolute rounded-full w-24 ${positionClasses[position]}`}
         />
       ))}
     </div>

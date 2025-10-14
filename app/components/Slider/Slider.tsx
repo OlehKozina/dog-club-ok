@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Heading from "../Heading";
 import { ArrowButton } from ".";
-import Icons from "../Icons";
 import clsx from "clsx";
 import { PortableTextBlock } from "next-sanity";
 import Slide from "./Slide";
@@ -54,17 +53,9 @@ export default function Slider({ heading, slides, _id }: SliderProps) {
 
   return (
     <section
-      className="py-5 md:py-12 relative overflow-hidden max-md:scroll-mt-16 scroll-mt-10"
+      className="py-5 md:py-12 relative overflow-hidden max-md:scroll-mt-16 scroll-mt-10 px-6"
       id="customers"
     >
-      <Icons
-        icons={[
-          { name: "bread2", position: "top-left" },
-          { name: "basket", position: "top-right" },
-          { name: "loaf", position: "bottom-left" },
-          { name: "baguette", position: "bottom-right" },
-        ]}
-      />
       <div className="container mx-auto px-4 bg-brand-dark bg-opacity-80 rounded-3xl py-10">
         <Heading heading={heading} className="mb-6 text-center md:mb-10" />
         <div className="relative max-w-[21rem] sm:max-w-[42rem] md:max-w-[69rem] mx-auto">

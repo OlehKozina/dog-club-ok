@@ -125,7 +125,7 @@ const useCarousel = (
   const updateSectionProgress = useCallback(() => {
     if (emblaApi) {
       const progress = emblaApi.scrollProgress();
-      setSectionProgress(progress); // This updates the section progress state
+      setSectionProgress(progress);
     }
   }, [emblaApi]);
 
