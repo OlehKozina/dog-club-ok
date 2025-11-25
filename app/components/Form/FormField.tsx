@@ -10,9 +10,10 @@ const FormField = ({ field }: { field?: FormFieldType }) => {
         {label}
       </label>
       <input
-        className="w-full py-2 md:py-4 px-5 md:px-10 rounded-lg border transition-all border-brand-brick bg-brand-light text-base leading-[1.17]"
+        className="w-full py-2 md:py-4 px-5 md:px-10 rounded-lg border transition-all border-brand-brick bg-brand-light text-base text-brand-default leading-[1.17]"
         type={type}
-        placeholder={name}
+        placeholder={label}
+        name={name}
         required={required}
       />
     </div>

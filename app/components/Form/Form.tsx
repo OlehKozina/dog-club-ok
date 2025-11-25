@@ -32,6 +32,31 @@ const Form = ({
   const togglePolicy = () => setIsPolicyVisible((prev) => !prev);
   if (!form) return;
   const { name, fields, buttonLabel } = form;
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: formData.get("name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+      }),
+    });
+
+    if (!res.ok) {
+      const data = await res.json();
+      alert(`Error: ${data.message}`);
+      return;
+    }
+
+    alert("Message sent!");
+    form.reset();
+  };
 
   return (
     <div
@@ -48,6 +73,7 @@ const Form = ({
       <form
         data-form="contact-form"
         className="max-w-[30rem] flex flex-col items-center mx-auto text-brand-dark"
+        onSubmit={handleSubmit}
       >
         {!!fields?.length &&
           fields.map((field) => {
@@ -55,7 +81,7 @@ const Form = ({
           })}
         <button
           className="mx-auto transition-all mb-6 block px-5 py-2 bg-brand-default hover:bg-opacity-80 text-brand-light border border-brand-default rounded-lg cursor-pointer text-xl font-extrabold md:px-8 md:py-4"
-          type="button"
+          type="submit"
         >
           {buttonLabel}
         </button>
