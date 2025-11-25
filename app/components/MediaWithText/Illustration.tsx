@@ -62,7 +62,7 @@ const Illustration = ({
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeMiterlimit="10"
-            strokeWidth=".4"
+            strokeWidth=".6"
             style={{ originX: "0.5px", originY: "0.5px" }}
             variants={{
               hidden: {

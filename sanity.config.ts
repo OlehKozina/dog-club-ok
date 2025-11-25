@@ -4,10 +4,10 @@ import schemas from "./sanity/schemas";
 import { visionTool } from "@sanity/vision";
 
 export default defineConfig({
-  projectId: "iiip1pg9",
-  dataset: "production",
+  projectId: process.env.SANITY_STUDIO_API_PROJECT_ID!,
+  dataset: process.env.SANITY_STUDIO_API_DATASET!,
   title: "DogClub",
-  apiVersion: "2025-10-11",
+  apiVersion: process.env.SANITY_STUDIO_API_VERSION!,
   basePath: "/admin",
   plugins: [
     deskTool({

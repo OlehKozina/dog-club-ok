@@ -2,9 +2,9 @@ import { createClient, groq } from "next-sanity";
 import { componentsQuery } from "./queries/componentsQuery";
 
 const client = createClient({
-  apiVersion: "2025-10-11",
-  dataset: "production",
-  projectId: "iiip1pg9",
+  apiVersion: process.env.SANITY_STUDIO_API_VERSION,
+  dataset: process.env.SANITY_STUDIO_API_DATASET,
+  projectId: process.env.SANITY_STUDIO_API_PROJECT_ID,
   useCdn: false,
 });
 
