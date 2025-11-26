@@ -25,7 +25,7 @@ function MediaWithText({
       id="trust"
     >
       <div className="container relative bg-brand-dark rounded-3xl bg-opacity-80 py-10">
-        <div className="flex flex-col md:flex-row items-start max-md:items-center justify-center gap-10 md:gap-0 md:space-x-10 text-base md:text-xl">
+        <div className="flex flex-col lg:flex-row items-start max-lg:items-center justify-center gap-10 lg:gap-0 lg:space-x-10 text-base lg:text-xl">
           <div className="max-w-[35rem] lg:max-w-[40rem]">
             <Heading
               heading={heading}
@@ -37,7 +37,7 @@ function MediaWithText({
               </div>
             )}
           </div>
-          <div className="max-w-[25rem] w-full hidden md:block">
+          <div className="max-w-[25rem] w-full hidden lg:block">
             <Illustration
               image={image}
               className="rounded-3xl"
@@ -45,7 +45,7 @@ function MediaWithText({
               height={300}
             />
           </div>
-          <div className="max-w-[35rem] w-full block md:hidden">
+          <div className="max-w-[35rem] w-full block lg:hidden">
             <Illustration
               image={horizontalImage}
               className="rounded-3xl"
