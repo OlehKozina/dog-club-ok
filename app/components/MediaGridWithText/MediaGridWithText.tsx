@@ -25,7 +25,7 @@ const MediaGridWithText = ({
       <div className="relative p-7 sm:p-14 bg-opacity-80 rounded-3xl bg-brand-dark max-md:scroll-mt-16 scroll-mt-24">
         {heading && (
           <Heading
-            className="text-3xl font-bold text-left max-w-[20rem] md:max-w-[40rem] absolute max-sm:-top-2 top-5 md:top-0 left-10 sm:left-20 z-above-content"
+            className="text-3xl md:!text-6xl font-bold text-left max-w-[20rem]  xs:max-w-[25rem] md:max-w-[40rem] absolute max-sm:-top-2 top-2 md:top-0 left-10 sm:left-20 z-above-content"
             heading={heading}
           />
         )}

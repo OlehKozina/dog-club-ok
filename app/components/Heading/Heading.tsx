@@ -29,7 +29,7 @@ const Heading = ({
       initial="initial"
       animate={inView ? "animate" : "initial"}
       className={clsx(
-        "font-extrabold leading-tight text-3xl md:text-6xl",
+        "font-extrabold leading-tight text-3xl sm:text-4xl",
         className
       )}
     >

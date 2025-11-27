@@ -11,7 +11,7 @@ function Footer({ footer }: { footer?: NavigationType }) {
     <footer
       className="relative text-center py-2 bg-cover bg-opacity-20 bg-center bg-no-repeat md:text-left transition-all"
       style={{
-        background: "linear-gradient(to top, #31261a, #4b3928)",
+        background: "linear-gradient(to right, #A1C4FD, #C2E9FB)",
       }}
     >
       <FooterContainer footerContainer={footerContainer} />

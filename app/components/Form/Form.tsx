@@ -67,7 +67,7 @@ const Form = ({
     >
       <Heading
         heading={heading}
-        className="mb-4 mx-auto text-center text-2xl sm:text-4xl lg:!text-6xl"
+        className="mb-4 mx-auto text-center text-2xl sm:text-4xl 1000:text-6xl"
       />
       <p className="text-brand-default text-center mb-3">{name}</p>
       <form

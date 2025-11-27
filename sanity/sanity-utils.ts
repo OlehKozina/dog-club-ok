@@ -36,7 +36,8 @@ export function getPageHome() {
 export function getHeader() {
   return fetchNoCache(`*[_type == "header"][0]{
     "form": *[_type == "form"][0]${formQuery},
-    navigation[]{ title, sectionId }
+    navigation[]{ title, sectionId },
+    "privacyPolicy": *[_type == "privacyPolicy"][0].content,
   }`);
 }
 

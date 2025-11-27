@@ -11,6 +11,7 @@ interface NavigationProps {
     root?: string;
     link?: string;
   };
+  bgColor?: boolean;
   onClose?: () => void;
   isHeader?: boolean;
   activeSection?: string | null;
@@ -22,6 +23,7 @@ const Navigation = ({
   onClose,
   isHeader = false,
   activeSection,
+  bgColor,
 }: NavigationProps) => {
   if (!navigation?.length) return null;
   const [hoveredIndex, setHoveredIndex] = useState<null | number>(null);
@@ -37,6 +39,11 @@ const Navigation = ({
   return (
     <motion.ul
       className={classNames?.root}
+      style={
+        bgColor
+          ? { background: "linear-gradient(to right, #A1C4FD, #C2E9FB)" }
+          : {}
+      }
       variants={{
         hidden: {},
         show: {

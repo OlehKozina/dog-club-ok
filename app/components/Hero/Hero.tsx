@@ -24,7 +24,6 @@ const Hero = ({ hero }: { hero: HeroType }) => {
         }}
         className="absolute inset-0 bg-cover bg-top"
       >
-        {" "}
         <video
           src={videoUrl}
           autoPlay
@@ -41,7 +40,7 @@ const Hero = ({ hero }: { hero: HeroType }) => {
             initial="initial"
             animate="animate"
             variants={containerVariants}
-            className="relative font-extrabold text-center text-5xl mb-25 leading-tight text-brand-light md:top-0 md:mb-12 md:text-8xl lg:text-9xl lg:line-height-[1.5] lg:mb-0"
+            className="relative font-extrabold text-center text-7xl mb-24 leading-tight text-brand-light md:top-0 md:mb-12 xs:text-8xl lg:text-9xl lg:line-height-[1.5] lg:mb-0"
           >
             {fullText.map((char, index) => {
               const isFirstWordChar = index < firstWord.length;
